@@ -1,0 +1,23 @@
+<div class="main">
+    <h1>Mobile Phone usage Tracker</h1>
+    <h2 *ngIf="submited">Thank you your Details Have been submitted</h2>
+    <form #userForm="ngForm" *ngIf="!submited" (ngSubmit)="onSubmit()" method="POST">
+    
+        <label for="username">Enter User Name: </label>
+        <input type="text" name="username" [(ngModel)]="userModel.username"><br/>
+    
+        <label for="timeused">Total time Phone accessed: </label>
+        <input type="number" name="timeused" [(ngModel)]="userModel.timeused"><br/>
+    
+        <label for="dateused">Todays Date: </label>
+        <input type="date" name="dateused" [(ngModel)]="userModel.dateused"><br/>
+    
+        <label for="mood">Mood: </label><br/>
+        <input type="radio" name="mood" value="Good" [(ngModel)]="userModel.mood"> <span>Good</span><br/>
+        <input type="radio" name="mood" value="average" [(ngModel)]="userModel.mood"> <span>Average</span><br/>
+        <input type="radio" name="mood" value="bad" [(ngModel)]="userModel.mood"> <span>Good</span><br/>
+    
+        <button type="submit">Submit</button>
+    
+    </form> 
+</div>
